@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pudim.com.br — isso é um pudim.</title>
+<meta name="description" content="Uma releitura moderna e responsiva do lendário pudim.com.br: a mesma piada, um pouco mais de doçura visual.">
+
+<!-- Open Graph / compartilhamento -->
+<meta property="og:title" content="pudim.com.br — isso é um pudim.">
+<meta property="og:description" content="O site mais inútil e mais amado da internet brasileira, agora responsivo.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍮</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="drip-cursor" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a href="#topo" class="brand">
+    <span class="brand-mark">🍮</span>
+    <span class="brand-text">pudim<span class="brand-dot">.com.br</span></span>
+  </a>
+  <nav class="topnav">
+    <a href="#sobre">a receita da história</a>
+    <a href="#curiosidades">curiosidades</a>
+    <a href="#compartilhe">espalhar</a>
+    <a class="mailchip" href="mailto:contato@pudim.com.br">contato@pudim.com.br</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="topo" class="hero">
+    <p class="eyebrow">desde 2000 · o site mais desnecessário (e mais amado) do brasil</p>
+
+    <div class="photo-frame">
+      <button class="pudim-stage" id="pudimStage" aria-label="Clique no pudim para fazê-lo tremer">
+        <svg id="pudimSvg" viewBox="0 0 640 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pudimTitle">
+          <title id="pudimTitle">Fotografia estilizada de um pudim de leite condensado com calda de caramelo, iluminado por flash</title>
+          <defs>
+            <radialGradient id="prato" cx="46%" cy="38%" r="70%">
+              <stop offset="0%" stop-color="#FFFEFB"/>
+              <stop offset="55%" stop-color="#FBF2DC"/>
+              <stop offset="100%" stop-color="#E9D4A6"/>
+            </radialGradient>
+            <linearGradient id="caldaPool" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8A4212"/>
+              <stop offset="100%" stop-color="#5A2409"/>
+            </linearGradient>
+            <linearGradient id="corpoFlan" x1="0.1" y1="0" x2="0.75" y2="1">
+              <stop offset="0%" stop-color="#FEF6D9"/>
+              <stop offset="45%" stop-color="#F7E1A3"/>
+              <stop offset="100%" stop-color="#E7BE6C"/>
+            </linearGradient>
+            <linearGradient id="capaCaramelo" x1="0.2" y1="0" x2="0.8" y2="1">
+              <stop offset="0%" stop-color="#9A5420"/>
+              <stop offset="55%" stop-color="#6E3110"/>
+              <stop offset="100%" stop-color="#4A2008"/>
+            </linearGradient>
+            <radialGradient id="brilhoCapa" cx="38%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#C88A46" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#C88A46" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="brilhoFlash" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+              <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="vinheta" cx="50%" cy="45%" r="72%">
+              <stop offset="58%" stop-color="#000000" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#2A1004" stop-opacity="0.20"/>
+            </radialGradient>
+            <filter id="grao" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="ruido"/>
+              <feColorMatrix in="ruido" type="matrix"
+                values="0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0 0
+                        0 0 0 0.06 0"/>
+            </filter>
+            <filter id="blurSuave"><feGaussianBlur stdDeviation="8"/></filter>
+            <filter id="blurForte"><feGaussianBlur stdDeviation="16"/></filter>
+            <filter id="blurDrip"><feGaussianBlur stdDeviation="0.6"/></filter>
+            <clipPath id="clipCorpo">
+              <path d="M190,168 L172,352 A150,36 0 0 0 468,352 L450,168 Z"/>
+            </clipPath>
+          </defs>
+
+          <!-- sombra de contato do prato (fundo do quadro já é transparente) -->
+          <ellipse cx="320" cy="472" rx="230" ry="28" fill="#2A1004" opacity="0.15" filter="url(#blurSuave)"/>
+          <!-- prato -->
+          <ellipse cx="320" cy="432" rx="252" ry="70" fill="url(#prato)" stroke="#E7D2A3" stroke-width="2"/>
+          <ellipse cx="320" cy="420" rx="252" ry="70" fill="none" stroke="#FFFFFF" stroke-width="9" opacity="0.5"/>
+          <!-- poça de calda ao redor da base -->
+          <ellipse cx="320" cy="404" rx="195" ry="44" fill="url(#caldaPool)" opacity="0.94"/>
+          <ellipse cx="290" cy="392" rx="70" ry="14" fill="#B4652A" opacity="0.4" filter="url(#blurSuave)"/>
+          <ellipse cx="420" cy="398" rx="40" ry="10" fill="#B4652A" opacity="0.3" filter="url(#blurSuave)"/>
+
+          <g id="pudimWobble" class="pudim-wobble">
+            <path d="M190,168 L172,352 A150,36 0 0 0 468,352 L450,168 Z" fill="url(#corpoFlan)"/>
+            <path d="M320,168 L450,168 L468,352 A150,36 0 0 1 320,388 Z" fill="#C99A50" opacity="0.28" clip-path="url(#clipCorpo)"/>
+            <ellipse cx="250" cy="250" rx="46" ry="95" fill="#FFF6D9" opacity="0.55" filter="url(#blurSuave)" clip-path="url(#clipCorpo)"/>
+            <ellipse cx="320" cy="168" rx="130" ry="34" fill="url(#capaCaramelo)"/>
+            <ellipse cx="320" cy="168" rx="130" ry="34" fill="url(#brilhoCapa)"/>
+            <ellipse cx="320" cy="164" rx="96" ry="21" fill="#7A3A10" opacity="0.55"/>
+            <path d="M256,160 q64,-14 128,0" stroke="#B6742C" stroke-width="2.5" fill="none" opacity="0.55"/>
+            <g filter="url(#blurDrip)">
+              <path d="M204,198 C200,236 196,268 200,298 C206,282 210,236 212,198 Z" fill="#6E3110" opacity="0.9"/>
+              <path d="M300,200 C297,246 294,286 299,320 C306,300 309,244 312,200 Z" fill="#6E3110" opacity="0.9"/>
+              <path d="M400,198 C398,232 396,262 401,290 C407,274 410,232 412,198 Z" fill="#6E3110" opacity="0.85"/>
+              <path d="M438,202 C436,224 434,244 438,262 C443,250 445,222 447,202 Z" fill="#6E3110" opacity="0.8"/>
+            </g>
+            <ellipse cx="258" cy="232" rx="80" ry="120" fill="url(#brilhoFlash)" filter="url(#blurForte)" clip-path="url(#clipCorpo)"/>
+            <ellipse cx="242" cy="196" rx="26" ry="40" fill="#FFFFFF" opacity="0.5" filter="url(#blurSuave)" clip-path="url(#clipCorpo)"/>
+          </g>
+
+          <!-- migalhas no prato -->
+          <ellipse cx="150" cy="404" rx="4" ry="2.5" fill="#C88A34"/>
+          <ellipse cx="140" cy="412" rx="3" ry="2" fill="#C88A34"/>
+          <ellipse cx="500" cy="408" rx="3.5" ry="2" fill="#C88A34"/>
+          <ellipse cx="512" cy="398" rx="2.5" ry="1.8" fill="#8A4212"/>
+
+          <!-- vinheta + grão fotográfico, por cima de tudo -->
+          <ellipse cx="320" cy="300" rx="330" ry="290" fill="url(#vinheta)" pointer-events="none"/>
+          <rect x="0" y="0" width="640" height="560" filter="url(#grao)" opacity="0.45" pointer-events="none"/>
+        </svg>
+        <span class="tap-hint">toca aqui</span>
+      </button>
+      <p class="photo-caption">pudim.jpg — flash ligado, foco duvidoso, 100% carinho</p>
+    </div>
+
+    <h1 class="hero-title">Isso é um pudim.</h1>
+    <p class="hero-sub">(sério. era só isso mesmo. clica de novo se quiser.)</p>
+
+    <a href="#sobre" class="scroll-cue" aria-label="Rolar para saber mais">
+      <span></span> desce a calda
+    </a>
+  </section>
+
+  <div class="divisor-calda" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L1200,0 L1200,28
+               C1100,50 1000,14 900,30
+               C800,46 700,10 600,26
+               C500,42 400,8 300,24
+               C200,40 100,12 0,26 Z" fill="#FFFDF8"/>
+    </svg>
+  </div>
+
+  <section id="sobre" class="sobre">
+    <div class="sobre-inner">
+      <div class="sobre-texto">
+        <p class="kicker">a receita da história</p>
+        <h2>De sobremesa de convento a piada de internet</h2>
+        <p>O pudim que a gente conhece hoje começou bem longe de qualquer geladeira brasileira. A ideia de cozinhar uma mistura de ovos, leite e açúcar em banho-maria já aparecia na culinária inglesa e, principalmente, nos conventos portugueses do século XVI — onde sobravam gemas de ovo depois que as claras eram usadas para engomar roupa e clarificar vinho.</p>
+        <p>Essas gemas viraram doce. Muito doce. Nasceram ali várias receitas da doçaria portuguesa, incluindo os primeiros pudins, levados depois para o Brasil colônia. Por aqui, a receita ganhou o ingrediente que mudou tudo: o leite condensado, inventado em 1850 e popularizado no país já no século XX — foi o primeiro doce brasileiro a adotar esse ingrediente, e virou o pudim de leite condensado que conhecemos hoje, com a calda de caramelo escorrendo quando o molde é desenformado.</p>
+        <p>E o site? <strong>Pudim.com.br</strong> nasceu em 2000, exibindo só uma foto de pudim em baixa resolução e um e-mail — nada mais. Virou, quase por acidente, um dos endereços mais citados e linkados da internet brasileira, sobrevivendo a duas décadas de redesigns de todo mundo... menos dele mesmo. Esta página é uma tentativa (educada) de atualizar essa lenda sem estragar a piada.</p>
+      </div>
+
+      <ol class="timeline">
+        <li>
+          <span class="t-ano">séc. XVI</span>
+          <p>Conventos portugueses criam pudins doces para aproveitar gemas de ovo.</p>
+        </li>
+        <li>
+          <span class="t-ano">1850</span>
+          <p>Gail Borden inventa o leite condensado, pensado para conservar leite em viagens longas.</p>
+        </li>
+        <li>
+          <span class="t-ano">séc. XX</span>
+          <p>O leite condensado chega às cozinhas brasileiras e nasce o pudim que conhecemos.</p>
+        </li>
+        <li>
+          <span class="t-ano">2000</span>
+          <p>Pudim.com.br entra no ar com uma foto e um e-mail — e nunca mais sai.</p>
+        </li>
+        <li>
+          <span class="t-ano">agora</span>
+          <p>Uma versão responsiva, mas com o mesmo espírito minimalista.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="curiosidades" class="curiosidades">
+    <p class="kicker centro">curiosidades</p>
+    <h2 class="centro">Coisas que ninguém pergunta sobre pudim</h2>
+
+    <div class="cards">
+      <article class="card">
+        <span class="card-icon">🍮</span>
+        <h3>Nome enganoso</h3>
+        <p>Na Europa medieval, "pudim" também podia ser um prato salgado, feito com carne, gordura e especiarias — bem longe do doce cremoso que viraria sobremesa séculos depois.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon">🥄</span>
+        <h3>A calda é química</h3>
+        <p>O caramelo que escorre pelo prato é só açúcar levado ao ponto certo de caramelização — sem nenhum outro ingrediente. Simples assim, como o próprio site.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon">📧</span>
+        <h3>Um site, um e-mail</h3>
+        <p>A página original nunca teve menu, nunca teve rodapé, nunca teve mais de um elemento clicável. E mesmo assim segue entre os endereços .com.br mais linkados do Brasil.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon">🇵🇹</span>
+        <h3>Herança portuguesa</h3>
+        <p>Antes do leite condensado, o pudim brasileiro era feito com nata e recebia até o apelido de "pudim marfim", por causa da cor clara da receita original.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon">🏆</span>
+        <h3>Sobrevivente nato</h3>
+        <p>O site já foi invadido por hackers e mudou de dono ao longo dos anos — e mesmo assim manteve a mesma piada de sempre, sem precisar de nenhuma atualização.</p>
+      </article>
+      <article class="card">
+        <span class="card-icon">🌍</span>
+        <h3>Fama internacional</h3>
+        <p>Versões do pudim de leite condensado aparecem em receitarios da Ásia, do Oriente Médio e da América Latina — cada região com seu próprio toque na calda.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="compartilhe" class="compartilhe">
+    <p class="kicker centro">espalhe o pudim</p>
+    <h2 class="centro">Se você chegou até aqui, já pode contar pros outros</h2>
+    <p class="compartilhe-sub centro">Manda esse pudim pra alguém que também precisa de um minuto de paz na internet.</p>
+
+    <div class="share-row" id="shareRow">
+      <a class="share-btn wpp" data-share="whatsapp" href="#" target="_blank" rel="noopener">
+        <span class="share-ico">💬</span> WhatsApp
+      </a>
+      <a class="share-btn x" data-share="x" href="#" target="_blank" rel="noopener">
+        <span class="share-ico">𝕏</span> X / Twitter
+      </a>
+      <a class="share-btn fb" data-share="facebook" href="#" target="_blank" rel="noopener">
+        <span class="share-ico">f</span> Facebook
+      </a>
+      <a class="share-btn li" data-share="linkedin" href="#" target="_blank" rel="noopener">
+        <span class="share-ico">in</span> LinkedIn
+      </a>
+      <button class="share-btn copy" id="copyLinkBtn" type="button">
+        <span class="share-ico">🔗</span> <span id="copyLabel">Copiar link</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape-inner">
+    <div class="rodape-brand">
+      <span class="brand-mark">🍮</span>
+      <p>pudim<span class="brand-dot">.com.br</span></p>
+    </div>
+    <p class="rodape-texto">
+      Projeto acadêmico — releitura moderna e responsiva do clássico <strong>pudim.com.br</strong>, mantendo o conceito minimalista original.
+    </p>
+    <ul class="rodape-links">
+      <li>Desenvolvido por <strong>Raphael</strong></li>
+      <li><a href="mailto:contato@pudim.com.br">contato@pudim.com.br</a></li>
+    </ul>
+    <p class="rodape-copy">© <span id="ano"></span> — feito com HTML5, CSS3 e uma calda de bom humor.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
