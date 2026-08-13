@@ -1,6 +1,4 @@
-// ============================================================
-// pudim.com.br — interações
-// ============================================================
+
 
 document.getElementById("ano").textContent = new Date().getFullYear();
 
